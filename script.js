@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () { //รอให้ HT
     const observer = new IntersectionObserver(entries => {//เช็คว่า Element นี้อยู่ในหน้าจอไหม
         entries.forEach(entry => { // วนลูปผ่านแต่ละ Element ที่กำลังถูกสังเกต
             if (entry.isIntersecting) { //เป็น true ถ้า #About ปรากฏในหน้าจอ
-                document.body.style.backgroundColor = "#b3e5fc"; // เปลี่ยนสี #About
+                document.body.style.backgroundColor = "#e1f5fe"; // เปลี่ยนสี #About
             } else {
                 document.body.style.backgroundColor = "#ffffff"; // กลับเป็นสีขาวเมื่อออกจาก #About
             }
