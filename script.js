@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () { //รอให้ HT
                 document.body.style.backgroundColor = "#ffffff"; // กลับเป็นสีขาวเมื่อออกจาก #About
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.7 });
 
     observer.observe(aboutSec);
 });

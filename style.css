@@ -276,30 +276,29 @@ body {
 	z-index: 1;
 }
 #About .about{
-	
     flex-direction: column;
     text-align: center;
     max-width: 1500px;
     margin: 0  auto;
     padding: 100px 0;
 }
-#About h1{
+#About .head{
     display: block;
 	width: fit-content;
-	font-size: 4rem;
+	font-size: 3rem;
 	position: absolute;
 	color: #000000;
     text-transform: uppercase;
-     top: 350px;
+    top: 300px;
 	left: 400px;
-}
+}	
 #About .Aboutfont
 {
 	width: fit-content;
 	font-size: 2rem;
 	position: absolute;
     	text-transform: uppercase;
-	top: 490px;
+	top: 400px;
 	left: 400px;
 	text-align: left;
 }
@@ -309,31 +308,37 @@ body {
     max-height: 100%;
 	width: 100%;
 	position: absolute;	
-	top: 400px;
+	top: 350px;
 	left: 390px
 }
 
 #education{
-    background-size: cover;
-    background-position: top center;
+	height: 100vh;
+	background-size: cover;
+	background-position: top center;
 	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
 	z-index: 1;
 }
 #education .education{
     flex-direction: column;
+	position: relative;
     text-align: center;
     max-width: 1500px;
     margin: 0  auto;
     padding: 100px 0;
 }
-#education h1{
+#education .head{
     display: block;
 	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: black;
+	font-size: 3rem;
+	position: absolute;
+	color: #000000;
     text-transform: uppercase;
-    margin-bottom: 50px;
+    top: 100px;
+	right: 200px;
 }
 #hobby{
     background-size: cover;
