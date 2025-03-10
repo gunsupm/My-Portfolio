@@ -11,18 +11,18 @@ document.addEventListener("DOMContentLoaded", function () { //รอให้ HT
         });
     }, { threshold: 0.7 });
 
-    const HomeSec = document.getElementById("Home"); //ดึง section ที่มี id="..." มาเก็บไว้
+    const homeSec = document.getElementById("Home"); //ดึง section ที่มี id="..." มาเก็บไว้
     const Homebg = new IntersectionObserver(entries => {//เช็คว่า Element นี้อยู่ในหน้าจอไหม
     entries.forEach(entry => { // วนลูปผ่านแต่ละ Element ที่กำลังถูกสังเกต
         if (entry.isIntersecting) { //เป็น true ถ้า #... ปรากฏในหน้าจอ
             document.body.style.backgroundColor = "#ECD4D4"; // เปลี่ยนสี #...
         } else { 
-            cument.body.style.backgroundColor = "#ffffff";// กลับเป็นสี...เมื่อออกจาก #...
+            document.body.style.backgroundColor = "#ffffff";// กลับเป็นสี...เมื่อออกจาก #...
         }
     });
 }, { threshold: 0.3 });
 
-Homebg.observe(HomeSec);
+Homebg.observe(homeSec);
 Aboutbg.observe(aboutSec);
 });
 document.querySelector('.hamburger').addEventListener('click', function() {
