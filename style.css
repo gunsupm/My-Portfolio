@@ -7,6 +7,7 @@
 html{
     font-size: 10px;
     font-family: 'Prompt',sans-serif;
+	overflow-x: hidden;
 }
 a {
 	text-decoration: none;
@@ -15,6 +16,7 @@ a {
 	min-height: 100vh;
 	width: 100%;
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: center;
 }
@@ -40,176 +42,60 @@ a {
 	height: 100%;
 	max-width: 1300px;
 	padding: 0 10px;
-	margin-left: 1100px; /* ดันเมนูไปทางขวา */
+	margin-left:100rem;/* ดันเมนูไปทางขวา */
 }
 #header .nav-list ul {
-	list-style: none;
-	position: absolute;
-	background-color: rgb(31, 30, 30);
-	width: 100vw;
-	height: 100vh;
-	left: 100%;
-	top: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	z-index: 1;
-	overflow-x: hidden;
-	transition: 0.5s ease left;
+    list-style: none;
+    position: relative;       /* แสดงภายใน header */
+    background-color: transparent; /* ไม่ต้องมีพื้นหลังถ้าไม่ต้องการ */
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;      /* จัดรายการให้เป็นแนวนอน */
+    justify-content: flex-end;/* จัดชิดขวา (ปรับได้ตามที่ต้องการ) */
+    align-items: center;
+    z-index: 1;
+    overflow: visible;
+    transition: none;         /* ไม่ต้องมี transition เมื่อแสดงตลอด */
 }
-#header .nav-list ul.active {
-	left: 0%;
+
+#header .nav-list ul li {
+    margin: 0 10px;           /* ระยะห่างระหว่างรายการ */
 }
+
 #header .nav-list ul a {
-	font-size: 2.5rem;
-	font-weight: 500;
-	letter-spacing: 0.2rem;
-	text-decoration: none;
-	color:gold;
-	text-transform: uppercase;
-	padding: 20px;
-	display: block;
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    color: gold;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+    z-index: 1;
 }
-#header .nav-list ul a::after {
-	content: attr(data-after);
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	color: black;
-	font-size: 13rem;
-	letter-spacing: 50px;
-	z-index: -1;
-	transition: 0.3s ease letter-spacing;
-}
+
+
 #header .nav-list ul li:hover a::after {
-	transform: translate(-50%, -50%) scale(1);
-	letter-spacing: initial;
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
 }
+
 #header .nav-list ul li:hover a {
-	color: crimson;
+    color: crimson;
 }
+
 /*ส่วน nav มือถือ*/
 
-/* ซ่อนเมนูเฉพาะบนมือถือ (จอเล็ก) */
-@media screen and (max-width: 768px) {
-    .nav-list {
-        display: none; /* ซ่อนเมนู */
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 80px;
-        right: 0;
-        width: 250px;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 20px;
-        border-radius: 10px;
-    }
 
-    /* แสดงเมนูเมื่อกดปุ่ม Hamburger */
-    .nav-list.active {
-        display: flex;
-    }
-}
-
-/* แสดงเมนูปกติบนหน้าจอใหญ่ (Desktop) */
-@media screen and (min-width: 769px) {
-    .nav-list {
-        display: flex !important; /* บังคับให้แสดง */
-        position: static;
-        width: auto;
-        background: none;
-        padding: 0;
-    }
-
-    .nav-list ul {
-        display: flex;
-        gap: 20px;
-    }
-
-    /* ซ่อนปุ่ม Hamburger บนหน้าจอใหญ่ */
-    .hamburger {
-        display: none;
-    }
-}
-
-/* แสดงเมนูเมื่อกด Hamburger */
-.nav-list.active {
-    display: flex;
-}
-
-/* ทำให้เมนูอยู่ตรงกลาง */
-.nav-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.nav-list ul li {
-    margin: 10px 0;
-}
-
-.nav-list ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* Hamburger Animation */
-.hamburger {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-}
-
-.hamburger .bar {
-    height: 3px;
-    width: 30px;
-    background-color: white;
-    position: relative;
-}
-
-.hamburger .bar::before,
-.hamburger .bar::after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    transition: 0.3s ease-in-out;
-}
-
-.hamburger .bar::before {
-    top: -8px;
-}
-
-.hamburger .bar::after {
-    top: 8px;
-}
-
-/* เปลี่ยนเป็น X เมื่อ active */
-.hamburger.active .bar {
-    background: transparent;
-}
-
-.hamburger.active .bar::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.hamburger.active .bar::after {
-    transform: rotate(-45deg);
-    top: 0;
-}
 
 
 body {
 	margin: 0;
-	transition: background-color 0.7s /* ทำให้สีพื้นหลังค่อยๆ เปลี่ยนภายใน ... วินาที*/ ease-in-out;/* ทำให้เปลี่ยนสีแบบ เริ่มช้า-เร็ว-จบช้า ดูลื่นไหล*/
+	transition: background-color 0.5s /* ทำให้สีพื้นหลังค่อยๆ เปลี่ยนภายใน ... วินาที*/ ease-in-out;/* ทำให้เปลี่ยนสีแบบ เริ่มช้า-เร็ว-จบช้า ดูลื่นไหล*/
   } 
 
 #Home {
@@ -259,17 +145,18 @@ body {
 }
 
 #About{
-	height: 100vh;
-	background-size: cover;
-	background-position: top center;
+    background-size: cover;
+    background-position: top center;
 	position: relative;
 	left: 0;
 	top: 0;
+	height: 100%;
 	width: 100%;
 	z-index: 1;
 }
 #About .about{
     flex-direction: column;
+	position: relative;
     text-align: center;
     max-width: 1500px;
     margin: 0  auto;
@@ -277,22 +164,22 @@ body {
 }
 #About .head{
     display: block;
-	width: fit-content;
-	font-size: 3rem;
+	width: 200px;
+	font-size: 2.5rem;
 	position: absolute;
 	color: #000000;
     text-transform: uppercase;
-    top: 250px;
-	left: 400px;
+    top: 20rem;
+	left: 20rem;
 }	
 #About .Aboutfont
 {
 	width: fit-content;
 	font-size: 2rem;
 	position: absolute;
-    	text-transform: uppercase;
-	top: 400px;
-	left: 400px;
+    text-transform: uppercase;
+	top: 40rem;
+	left: 30rem;
 	text-align: left;
 }
 #About .Mypic
@@ -301,8 +188,8 @@ body {
     max-height: 100%;
 	width: 100%;
 	position: absolute;	
-	top: 250px;
-	left: 390px
+	top: 25rem;
+	left: 45rem;
 }
 
 #education{
@@ -316,29 +203,29 @@ body {
 	z-index: 1;
 }
 #education .education{
-    flex-direction: column;
+	flex-direction: column;
 	position: relative;
-    text-align: center;
-    max-width: 1500px;
-    margin: 0  auto;
-    padding: 100px 0;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0  auto;
+	padding: 100px 0;
 }
 #education .head{
-	display: flex;
-	width: fit-content;
-	font-size: 3rem;
+	display: block;
+	width: 200px;
+	font-size: 2.5rem;
 	position: absolute;
 	color: #000000;
     text-transform: uppercase;
-    top: 200px;
-	left: 200px;
+    top: 20rem;
+	left: 20rem;
 }
 #education .text{
 	position: absolute;
 	width: fit-content;
 	font-size: 2rem;
-	top: 300px;
-	left: 200px;
+	top: 33rem;
+	left: 30rem;
 	text-align: left;
 }
 #education .logo{
@@ -346,30 +233,36 @@ body {
     max-height: 100%;
 	width: 100%;
 	position: absolute;	
-	top: 260px;
-	left: 300px
+	top: 300px;
+	left: 400px
 }
-#hobby{
+#skill{
     background-size: cover;
     background-position: top center;
 	position: relative;
-	z-index: 1;  
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
 }
-#hobby .hobby{
-    flex-direction: column;
-    text-align: center;
-    max-width: 1500px;
-    margin: 0  auto;
-    padding: 100px 0;
-}
-#hobby h1{
-    display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: black;
+#skill .skill{
+		flex-direction: column;
+		text-align: center;
+		max-width: 1500px;
+		margin: 0  auto;
+		padding: 100px 0;
+	}
+
+#skill .head{
+	display: block;
+	width: 200px;
+	font-size: 2.5rem;
+	position: absolute;
+	color: #000000;
     text-transform: uppercase;
-    margin-bottom: 50px;
+    top: 20rem;
+	left: 20rem;
 }
 
 #contact{
@@ -404,31 +297,4 @@ body {
 span{
     color :salmon;
 }
-@media only screen and (min-width: 1200px) {
-	/* header */
-	#header .hamburger {
-		display: none;
-	}
-	#header .nav-list ul {
-		position: initial;
-		display: block;
-		height: auto;
-		width: fit-content;
-		background-color: transparent;
-	}
-	#header .nav-list ul li {
-		display: inline-block;
-	}
-	#header .nav-list ul li a {
-		font-size: 1.8rem;
-	}
-	#header .nav-list ul a:after {
-		display: none;
-	}
-	/* End header */
 
-	#services .service-bottom .service-item {
-		flex-basis: 22%;
-		margin: 1.5%;
-	}
-}
