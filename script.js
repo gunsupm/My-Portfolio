@@ -28,5 +28,5 @@ Aboutbg.observe(aboutSec);
 document.querySelector('.hamburger').addEventListener('click', function() {
     document.querySelector('#header .nav-list ul').classList.toggle('active');
 });
-
+ 
 
