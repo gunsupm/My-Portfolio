@@ -78,6 +78,9 @@ a {
     z-index: 1;
 }
 
+.hamburger {
+	display: none;
+  }
 
 #header .nav-list ul li:hover a::after {
     transform: translate(-50%, -50%) scale(1);
@@ -87,11 +90,6 @@ a {
 #header .nav-list ul li:hover a {
     color: crimson;
 }
-
-/*ส่วน nav มือถือ*/
-
-
-
 
 body {
 	margin: 0;
@@ -320,3 +318,56 @@ span{
     color :salmon;
 }
 
+/*ในโทรศัพท์*/
+@media screen and (max-width: 768px) {
+	/* ซ่อน nav-list แบบปกติ */
+	#header .nav-list {
+	  position: absolute;
+	  top: 80px;  /* ระยะห่างจาก header */
+	  right: 0;
+	  background-color: rgba(0, 0, 0, 0.9);
+	  width: 250px;
+	  height: calc(100vh - 80px); /* ให้เต็มหน้าจอลบ header */
+	  display: none; /* ซ่อนเมนูไว้เริ่มแรก */
+	  flex-direction: column;
+	  align-items: center;
+	  padding-top: 20px;
+	}
+	
+	/* แสดง nav-list เมื่อ active */
+	#header .nav-list.active {
+	  display: flex;
+	}
+	
+	/* เปลี่ยนลักษณะ ul ให้เป็นแนวตั้ง */
+	#header .nav-list ul {
+	  flex-direction: column;
+	  gap: 10px;
+	  width: 100%;
+	}
+	
+	/* ปรับขนาดลิงก์ใน nav สำหรับมือถือ */
+	#header .nav-list ul a {
+	  font-size: 2rem;
+	  padding: 15px;
+	  text-align: center;
+	}
+	
+	/* แสดง hamburger menu */
+	.hamburger {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-around;
+	  width: 40px;
+	  height: 40px;
+	  cursor: pointer;
+	}
+	
+	.hamburger .bar {
+	  height: 3px;
+	  width: 100%;
+	  background-color: white;
+	  border-radius: 5px;
+	  transition: 0.3s ease;
+	}
+  }
