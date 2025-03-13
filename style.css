@@ -319,7 +319,13 @@ span{
 }
 
 /*ในโทรศัพท์*/
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+	parent{
+	grid-template-columns: repeat(1 lfr);
+}
+body{
+	font-size: 16px;
+}
     #header .nav-bar {
         flex-direction: column;
         align-items: flex-start;
