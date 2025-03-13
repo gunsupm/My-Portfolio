@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () { //รอให้ HT
             document.body.style.backgroundColor = "#ffffff";// กลับเป็นสี...เมื่อออกจาก #...
         }
     });
-}, { threshold: 0.3 });
+}, { threshold: 0.7 });
 
 Homebg.observe(homeSec);
 Aboutbg.observe(aboutSec);
