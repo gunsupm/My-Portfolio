@@ -319,6 +319,10 @@ span{
 
 /*ในโทรศัพท์*/
 @media (max-width:768px) {
+body{
+flex-direction: column; //จัดเป็นแนวตั้ง
+text-align : center;
+}
     .hamburger {
         display: block;
         cursor: pointer;
