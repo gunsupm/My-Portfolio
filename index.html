@@ -11,7 +11,7 @@
         <div class="header">
             <div class="nav-bar">
                 <div class="nav-list">
-                    <div class="hamburger">
+                    <div class="hamburger" ondblclick="toggleMenu()">
                     <div class="bar"></div>
                 </div>
                     <ul>
@@ -87,6 +87,10 @@
             </div>    
         </div>
     </section> 
-    <script src="script.js" defer></script>
+    <script src="script.js" defer>
+        function toggleMenu() {
+        document.querySelector('.nav-list').classList.toggle('active');
+    }
+    </script>
 </body>
 </html>
