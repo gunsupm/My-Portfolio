@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: "About", color: "#e1f5fe" },
         { id: "education", color: "#ffffff" },
         { id: "skill", color: "#f3e5f5" },
-        { id: "contact", color: "#B6BBC7" }
-
     ];
 
     let currentSection = null; // เก็บ section ที่แสดงผลล่าสุดป้องกันการเปลี่ยนสีซ้ำ
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             currentSection = visibleSection;
             document.body.style.backgroundColor = sections.find(sec => sec.id === visibleSection).color; //ค้นหาสีที่ตรงกับ visibleSection แล้วนำมาเปลี่ยนสี Bg
         }
-    }, { threshold: 0.4 }); //Sec นั้น อยู่ 40% ของจอถึงจะนับว่าแสดงผล 
+    }, { threshold: 0.3 }); //Sec นั้น อยู่ 40% ของจอถึงจะนับว่าแสดงผล 
 
 
     sections.forEach(sec => {
@@ -34,9 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-document.querySelector('.hamburger').addEventListener('click', function() {
-    document.querySelector('#header .nav-list ul').classList.toggle('active');
-});
+function toggleMenu() {
+    document.querySelector('.nav-list').classList.toggle('active');
+}
  
 
