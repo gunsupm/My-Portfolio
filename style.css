@@ -318,7 +318,7 @@ span{
 }
 
 /*ในโทรศัพท์*/
-@media (max-width: 800px) {
+@media (max-width:768px) {
     .hamburger {
         display: block;
         cursor: pointer;
@@ -357,9 +357,6 @@ span{
         padding: 15px;
 		margin: 10px 0;
     }
- parent{
-	grid-template-columns: repeat(1 lfr);
-}
 body{
 	font-size: 16px;
 }
