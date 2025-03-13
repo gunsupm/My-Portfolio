@@ -35,14 +35,13 @@ a {
 	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	height: 100%;
-	max-width: 1300px;
-	padding: 0 10px;
-	margin-left:100rem;/* ดันเมนูไปทางขวา */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* ดัน navbar ไปด้านขวา */
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 20px;
+	margin-left: auto;
 }
 #header .nav-list ul {
     list-style: none;
@@ -133,7 +132,7 @@ body {
     letter-spacing: .1rem;
     margin-top: 50px;
     transition: .5s ease background-color;
-    transition-property: bbackground-color, color;
+    transition-property: background-color, color;
 }
 #Home .cta:hover
 {
@@ -319,54 +318,49 @@ span{
 }
 
 /*ในโทรศัพท์*/
-@media screen and (max-width: 768px) {
-	parent{
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
+
+    .hamburger div {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        margin: 6px 0;
+    }
+
+    #header .nav-list {
+		position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: navy;
+        display: none;
+        flex-direction: column;
+        text-align: right;
+    }
+
+    #header .nav-list.active {
+        display: flex;
+    }
+
+    #header .nav-list ul {
+        flex-direction: column;
+    }
+	#header .nav-list li {
+        padding: 15px;
+		margin: 10px 0;
+    }
+ parent{
 	grid-template-columns: repeat(1 lfr);
 }
 body{
 	font-size: 16px;
 }
-    #header .nav-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-        margin: 0;
-    }
-
-    #header .nav-list {
-        display: none; /* ซ่อนเมนูเริ่มต้น */
-        flex-direction: column;
-        width: 100%;
-        background: navy;
-        position: absolute;
-        top: 8vh; /* ให้อยู่ใต้ Header */
-        left: 0;
-        text-align: center;
-    }
-
-    #header .nav-list ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #header .nav-list.active {
-        display: flex; /* แสดงเมนูเมื่อกดปุ่ม Hamburger */
-    }
-
-    .hamburger {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 30px;
-        height: 3px;
-        background: gold;
-        margin: 6px 0;
-    }
 }

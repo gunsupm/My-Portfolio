@@ -31,9 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+ //Hamburger bar ในโทรศัพท์
+ document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navList = document.querySelector("#header .nav-list");
 
-function toggleMenu() {
-    document.querySelector('.nav-list').classList.toggle('active');
-}
- 
+    if (hamburger && navList) {
+        hamburger.addEventListener("click", function () {
+            navList.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+    }
+});
 
