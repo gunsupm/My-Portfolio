@@ -319,55 +319,48 @@ span{
 }
 
 /*ในโทรศัพท์*/
-@media screen and (max-width: 768px) {
-	/* ซ่อน nav-list แบบปกติ */
-	#header .nav-list {
-	  position: absolute;
-	  top: 80px;  /* ระยะห่างจาก header */
-	  right: 0;
-	  background-color: rgba(0, 0, 0, 0.9);
-	  width: 250px;
-	  height: calc(100vh - 80px); /* ให้เต็มหน้าจอลบ header */
-	  display: none; /* ซ่อนเมนูไว้เริ่มแรก */
-	  flex-direction: column;
-	  align-items: center;
-	  padding-top: 20px;
-	}
-	
-	/* แสดง nav-list เมื่อ active */
-	#header .nav-list.active {
-	  display: flex;
-	}
-	
-	/* เปลี่ยนลักษณะ ul ให้เป็นแนวตั้ง */
-	#header .nav-list ul {
-	  flex-direction: column;
-	  gap: 10px;
-	  width: 100%;
-	}
-	
-	/* ปรับขนาดลิงก์ใน nav สำหรับมือถือ */
-	#header .nav-list ul a {
-	  font-size: 2rem;
-	  padding: 15px;
-	  text-align: center;
-	}
-	
-	/* แสดง hamburger menu */
-	.hamburger {
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: space-around;
-	  width: 40px;
-	  height: 40px;
-	  cursor: pointer;
-	}
-	
-	.hamburger .bar {
-	  height: 3px;
-	  width: 100%;
-	  background-color: white;
-	  border-radius: 5px;
-	  transition: 0.3s ease;
-	}
-  }
+@media (max-width: 768px) {
+    #header .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+
+    #header .nav-list {
+        display: none; /* ซ่อนเมนูเริ่มต้น */
+        flex-direction: column;
+        width: 100%;
+        background: navy;
+        position: absolute;
+        top: 8vh; /* ให้อยู่ใต้ Header */
+        left: 0;
+        text-align: center;
+    }
+
+    #header .nav-list ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #header .nav-list.active {
+        display: flex; /* แสดงเมนูเมื่อกดปุ่ม Hamburger */
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: gold;
+        margin: 6px 0;
+    }
+}
