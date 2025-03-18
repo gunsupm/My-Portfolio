@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Reset web  */
 * {
 	padding: 0;
 	margin: 0;
@@ -13,36 +14,44 @@ a {
 	text-decoration: none;
 }
 .container {
-	min-height: 100vh;
-	width: 100%;
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-}
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+} 
 
+/*Navbar*/
 #header {
 	position: fixed;
 	z-index: 1000;
 	left: 0;
 	top: 0;
-	width: 100vw;
+	width: 100%;
 	height: auto;
+	background-color: navy;
 }
 #header .header {
-	min-height: 8vh;
-	background-color: navy;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
 	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* ดัน navbar ไปด้านขวา */
-    width: 100%;
-    max-width: 1300px;
-    padding: 0 20px;
+    justify-content: space-between; /* ดัน navbar ไปด้านขวา */
+	padding: 15 20px;
 	margin-left: auto;
 }
+#header .nav-list {
+    display: flex;
+}
+#header .nav-list.active {
+	display: flex;
+  }
 #header .nav-list ul {
     list-style: none;
     position: relative;       /* แสดงภายใน header */
@@ -65,21 +74,15 @@ a {
 }
 
 #header .nav-list ul a {
-    position: relative;
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 0.2rem;
     text-decoration: none;
     color: gold;
     text-transform: uppercase;
-    padding: 20px;
+    padding: 10px;
     display: block;
-    z-index: 1;
 }
-
-.hamburger {
-	display: none;
-  }
 
 #header .nav-list ul li:hover a::after {
     transform: translate(-50%, -50%) scale(1);
@@ -92,8 +95,9 @@ a {
 
 body {
 	margin: 0;
-	transition: background-color 0.5s /* ทำให้สีพื้นหลังค่อยๆ เปลี่ยนภายใน ... วินาที*/ ease-in-out;/* ทำให้เปลี่ยนสีแบบ เริ่มช้า-เร็ว-จบช้า ดูลื่นไหล*/
-  } 
+	transition: background-color 0.2s /* ทำให้สีพื้นหลังค่อยๆ เปลี่ยนภายใน ... วินาที*/ ease-in-out;/* ทำให้เปลี่ยนสีแบบ เริ่มช้า-เร็ว-จบช้า ดูลื่นไหล*/
+	overflow-x: hidden;  
+} 
 
 #Home {
     background-size: cover;
@@ -104,6 +108,7 @@ body {
 	height: 100%;
 	width: 100%;
 	z-index: 1;
+	padding: 100px 20px;
 }
 #Home .Hmp {
 	max-width: 1200px;
@@ -150,6 +155,7 @@ body {
 	height: 100%;
 	width: 100%;
 	z-index: 1;
+	padding: 100px 20px;
 }
 #About .about{
     flex-direction: column;
@@ -198,6 +204,7 @@ body {
 	top: 0;
 	width: 100%;
 	z-index: 1;
+	padding: 100px 20px;
 }
 #education .education{
 	flex-direction: column;
@@ -234,7 +241,7 @@ body {
 	left: 400px
 }
 #skill{
-    background-size: cover;
+	background-size: cover;
     background-position: top center;
 	position: relative;
 	left: 0;
@@ -242,13 +249,15 @@ body {
 	height: 100%;
 	width: 100%;
 	z-index: 1;
+	padding: 100px 20px;
 }
 #skill .skill{
-		flex-direction: column;
-		text-align: center;
-		max-width: 1500px;
-		margin: 0  auto;
-		padding: 100px 0;
+    flex-direction: column;
+	position: relative;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0  auto;
+    padding: 100px 0;
 	}
 
 #skill .head{
@@ -273,34 +282,30 @@ body {
 
 #contact{
 	background-color: #212121;
-    background-size: cover;
-    background-position: top center;
 	position: relative;
-	left: 0;
-	top: 0;
 	min-height: 20vh;
-	width: 100%;
-	align-items: flex-end;  /* จัดให้องค์ประกอบอยู่ด้านล่าง */
+	width: 100vw;
 	z-index: 1;
+	padding: 10px 0;
+	left: 0;
+	right: 0;
 }
 #contact .contact{
 	flex-direction: column;
 	text-align: center;
-	max-width: 1500px;
 	margin: 0  auto;
-	padding: 20px 0;/* ลดระยะห่างด้านบนและล่าง */
+	padding: 10px 0;/* ลดระยะห่างด้านบนและล่าง */
 }
 #contact .text{
-	display: block;
-	width: 200px;
+	display: flex;
+	flex-direction: column;
 	font-size: 1.5rem;
 	letter-spacing: 0.2rem;
-	position: absolute;
+	position: static; 
 	color: #ffffff;
     text-transform: uppercase;
-    top: 3rem;
-	left: 40rem;
 	text-align: left;
+	padding: 0 300px;
 }
 #contact .link a:link{
 	font-size: 1.5rem;
@@ -318,47 +323,87 @@ span{
 }
 
 /*ในโทรศัพท์*/
-@media (max-width:768px) {
-body{
-flex-direction: column; //จัดเป็นแนวตั้ง
-text-align : center;
-}
-    .hamburger {
-        display: block;
-        cursor: pointer;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
+@media (max-width: 1024px) {
+    body {
+        text-align: center;
+        font-size: 14px;
+		overflow: hidden;
     }
-
-    .hamburger div {
-        width: 30px;
-        height: 4px;
-        background-color: white;
-        margin: 6px 0;
-    }
-
-    #header .nav-list {
-		position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        background: navy;
-        display: none;
-        flex-direction: column;
-        text-align: right;
-    }
-
-    #header .nav-list.active {
-        display: flex;
-    }
-
+	/*Hamburger bar + navlist*/
+	#header .nav-list {
+		position: fixed;
+		top: 60px; /* ปรับตามความสูงของ header */
+		right: -100%;
+		width: 300px;
+		display: flex; 
+		background-color: navy;
+		transition: right 0.5s ease;
+		flex-direction: column;
+		text-align: center;
+	}
+	#header .nav-list.active {
+			right: 0;
+		  }
     #header .nav-list ul {
         flex-direction: column;
     }
-	#header .nav-list li {
-        padding: 15px;
-		margin: 10px 0;
+    #header .nav-list li {
+        padding: 20px;
+        margin: 20px 0;
+    }
+	#header .hamburger {
+		display: flex;
+		flex-direction: column;
+		cursor: pointer;
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		z-index: 1001;
+	  }
+	#header .hamburger span {
+		width: 30px;
+		height: 4px;
+		background-color: gold;
+		border-radius: 25px;
+		transform: translate(-50%,-50%);
+		margin: 5px 0;
+	  }
+	  #header .hamburger span:nth-child(1) {
+		top: 25%;
+	  }
+	  #header .hamburger span:nth-child(3) {
+		top: 75%;
+	  }
+	  #header .hamburger.active span:nth-child(1){
+		background-color: crimson;
+	  }
+	  #header .hamburger.active span:nth-child(2){
+		background: crimson	;
+	  }
+	  #header .hamburger.active span:nth-child(3){
+		background: crimson;
+	  }
+	  
+    /* Sections */
+	#header{
+		height: 70px;
+	}
+	/*ปรับตำแหน่งในแสดงผลในโทรศัพท์*/
+	#About .head,
+	#education .head,
+	#skill .head,
+	#About .Aboutfont,
+	#education .text,
+	#skill .text,
+	#About .Mypic,
+	#education .logo {
+	  position: static;
+	  margin: 20px auto;
+	  text-align: center;
+	}
+	#education,
+	#skill {
+        height: auto;
+        padding: 50px 20px;
     }
 }
