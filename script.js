@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: "Home", color: "#ffebcd" },
         { id: "About", color: "#e0ffff" },
         { id: "education", color: "#ffffff" },
-        { id: "skill", color: "#f5f5dc" },
+        { id: "skill", color: "#f3e5f5" },
     ];
 
     let currentSection = null; // เก็บ section ที่แสดงผลล่าสุดป้องกันการเปลี่ยนสีซ้ำ
