@@ -269,15 +269,14 @@ body {
     text-transform: uppercase;
     top: 15rem;
 	left: 20rem;
-	text-align: left;
 }
 #skill .text{
 	position: absolute;
-	width: fit-content;
 	font-size: 1.8rem;
 	top: 25rem;
 	left: 30rem;
 	text-align: left;
+	max-width: 1200px;
 }
 
 #contact{
@@ -301,11 +300,12 @@ body {
 	flex-direction: column;
 	font-size: 1.5rem;
 	letter-spacing: 0.2rem;
-	position: static; 
+	position: absolute; 
 	color: #ffffff;
     text-transform: uppercase;
 	text-align: left;
-	padding: 0 300px;
+	max-width: 80%;
+	left: 30rem;
 }
 #contact .link a:link{
 	font-size: 1.5rem;
@@ -326,8 +326,8 @@ span{
 @media (max-width: 1024px) {
     body {
         text-align: center;
-        font-size: 14px;
-		overflow: hidden;
+        font-size: 1rem;
+	
     }
 	/*Hamburger bar + navlist*/
 	#header .nav-list {
@@ -339,7 +339,6 @@ span{
 		background-color: navy;
 		transition: right 0.5s ease;
 		flex-direction: column;
-		text-align: center;
 	}
 	#header .nav-list.active {
 			right: 0;
@@ -392,9 +391,9 @@ span{
 	#About .head,
 	#education .head,
 	#skill .head,
+	#skill .text,
 	#About .Aboutfont,
 	#education .text,
-	#skill .text,
 	#About .Mypic,
 	#education .logo {
 	  position: static;
@@ -404,6 +403,6 @@ span{
 	#education,
 	#skill {
         height: auto;
-        padding: 50px 20px;
+		width: 100vw;
     }
 }
