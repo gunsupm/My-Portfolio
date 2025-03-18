@@ -196,7 +196,7 @@ body {
 }
 
 #education{
-	height: 100vh;
+	height: 100%;
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -238,26 +238,26 @@ body {
 	width: 100%;
 	position: absolute;	
 	top: 300px;
-	left: 400px
+	left: 400px;
 }
 #skill{
+	height: 100%;
 	background-size: cover;
-    background-position: top center;
+	background-position: top center;
 	position: relative;
 	left: 0;
 	top: 0;
-	height: 100%;
 	width: 100%;
 	z-index: 1;
 	padding: 100px 20px;
 }
 #skill .skill{
-    flex-direction: column;
+	flex-direction: column;
 	position: relative;
-    text-align: center;
-    max-width: 1500px;
-    margin: 0  auto;
-    padding: 100px 0;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0  auto;
+	padding: 100px 0;
 	}
 
 #skill .head{
@@ -267,16 +267,16 @@ body {
 	position: absolute;
 	color: #000000;
     text-transform: uppercase;
-    top: 15rem;
+    top: 5rem;
 	left: 20rem;
 }
 #skill .text{
 	position: absolute;
-	font-size: 1.8rem;
-	top: 25rem;
+	width: fit-content;
+	font-size: 1.5rem;
+	top: 20rem;
 	left: 30rem;
 	text-align: left;
-	max-width: 1200px;
 }
 
 #contact{
@@ -391,7 +391,6 @@ span{
 	#About .head,
 	#education .head,
 	#skill .head,
-	#skill .text,
 	#About .Aboutfont,
 	#education .text,
 	#About .Mypic,
@@ -400,9 +399,14 @@ span{
 	  margin: 20px auto;
 	  text-align: center;
 	}
-	#education,
-	#skill {
-        height: auto;
-		width: 100vw;
-    }
+#skill .text,
+#contact .text {
+    position: static !important; /* ยกเลิก absolute */
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    margin: 20px auto;      /* จัดให้อยู่ตรงกลาง */
+    text-align: center;
+    font-size: 1.4rem;     /* ลดขนาดตัวอักษรลงก็ช่วยได้ */
+}
 }
