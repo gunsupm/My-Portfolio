@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const sections = [ //เก็บข้อมูล Section ที่ต้องการเปลี่ยนสี พร้อมระบุสีที่จะเปลี่ยน
-        { id: "Home", color: "#fce4ec" },
-        { id: "About", color: "#e1f5fe" },
+        { id: "Home", color: "#ffebcd" },
+        { id: "About", color: "#e0ffff" },
         { id: "education", color: "#ffffff" },
-        { id: "skill", color: "#f3e5f5" },
+        { id: "skill", color: "#f5f5dc" },
     ];
 
     let currentSection = null; // เก็บ section ที่แสดงผลล่าสุดป้องกันการเปลี่ยนสีซ้ำ
