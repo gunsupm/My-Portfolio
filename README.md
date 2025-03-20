@@ -4,7 +4,7 @@ This is a personal profile website built using **HTML**, **CSS**, and **JavaScri
 
 You can view the website by clicking the link below:
 
-[Click Here to Visit My Profile](your-link-here)
+[Click Here to Visit My Profile](https://gunsupm.github.io/My-Portfolio/)
 
 ## Features
 - **Responsive Design**: The website is fully responsive and adapts to various screen sizes.
@@ -26,13 +26,13 @@ Feel free to explore my projects and get to know more about my skills and experi
 If you would like to reach out, you can contact me via [email or social media link].
 
 
-# เว็บไซต์โปรไฟล์ของฉัน
+# เว็บไซต์โปรไฟล์ของผม
 
 เว็บไซต์โปรไฟล์ส่วนตัวที่สร้างด้วย **HTML**, **CSS**, และ **JavaScript** ซึ่งแสดงข้อมูลเกี่ยวกับประวัติการทำงาน ทักษะ และโปรเจกต์ของฉัน
 
 คุณสามารถเข้าเว็บไซต์ได้โดยคลิกที่ลิงก์ด้านล่างนี้:
 
-[คลิกที่นี่เพื่อเยี่ยมชมโปรไฟล์ของฉัน](your-link-here)
+[คลิกที่นี่เพื่อเยี่ยมชมโปรไฟล์ของฉัน](https://gunsupm.github.io/My-Portfolio/)
 
 ## ฟีเจอร์
 - **การออกแบบที่ตอบสนอง**: เว็บไซต์สามารถปรับขนาดและแสดงผลได้ดีทั้งบนหน้าจอคอมพิวเตอร์และมือถือ
