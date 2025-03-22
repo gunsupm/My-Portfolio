@@ -4,7 +4,7 @@ This is a personal profile website built using **HTML**, **CSS**, and **JavaScri
 
 You can view the website by clicking the link below:
 
-[Click Here to Visit My Profile](https://gunsupm.github.io/My-Portfolio/)
+[Click Here to Visit My Profile](https://gunsupm.github.io)
 
 ## Features
 - **Responsive Design**: The website is fully responsive and adapts to various screen sizes.
